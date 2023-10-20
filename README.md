@@ -14,6 +14,7 @@
 ### Delete Product
 ![image](https://github.com/Shantanu7022/Billing-System/assets/123929397/39249025-7020-46a7-811e-1552fb4765fb)
 
+
 ## Customer Dashboard
 ![image](https://github.com/Shantanu7022/Billing-System/assets/123929397/fe6cb809-6ab9-4dd5-af75-90ab69720ba0)
 ### Available Products List
