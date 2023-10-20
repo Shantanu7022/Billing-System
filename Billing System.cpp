@@ -54,6 +54,7 @@ void shopping :: menu()
 			
 			if(email=="shantanu@gmail.com" && password=="Shantanu_001")
 			{
+				cout<<"\n\n\t\t\tLogin Successful...\n\n";
 				Admin();
 			}
 			else
@@ -89,7 +90,7 @@ void shopping:: Admin()
 {
 	m:
 	int choice;
-	cout<<"\n\n\n\t\t\t|                 Admin Menu                  |";
+	cout<<"\n\n\n\t\t\t|              Admin Dashboard                |";
 	cout<<"\n\t\t\t|---------------------------------------------|";
 	cout<<"\n\t\t\t|     1. Press 1 to Add the product           |";
 	cout<<"\n\t\t\t|                                             |";
@@ -99,7 +100,7 @@ void shopping:: Admin()
     cout<<"\n\t\t\t|                                             |";
     cout<<"\n\t\t\t|     4. Press 4 to go back to home page      |";
     
-    cout<<"\n\nt\t\t Please enter your choice from above list: ";
+    cout<<"\n\n\t\t\t Please enter your choice from above list: ";
     cin>>choice;
     
     switch(choice)
@@ -131,15 +132,15 @@ void shopping:: buyer()
 {
 	m:
 	int choice;
-	cout<<"\n\n\n\t\t\t|        Customer Dashboard              |\n";
+	cout<<"\n\n\n\t\t\t|           Customer Dashboard            |\n\n";
 	cout<<"\t\t\t##########################################\n";
-	cout<<"\t\t\t|                                        |\n";
-	cout<<"\t\t\t|    1. Press 1 to Buy product           |\n";
-	cout<<"\t\t\t|                                        |\n";
-	cout<<"\t\t\t|    2. Press 2 to Go back to home page  |\n";
-	cout<<"\t\t\t|                                        |\n";
+	cout<<"\t\t\t#                                        #\n";
+	cout<<"\t\t\t#    1. Press 1 to Buy product           #\n";
+	cout<<"\t\t\t#                                        #\n";
+	cout<<"\t\t\t#    2. Press 2 to Go back to home page  #\n";
+	cout<<"\t\t\t#                                        #\n";
 	cout<<"\t\t\t##########################################\n";
-	cout<<"\t\t\t Please Enter your choice from above List : ";
+	cout<<"\n\t\t\t Please Enter your choice from above List : ";
 	
 	cin>>choice;
 	
@@ -173,7 +174,7 @@ void shopping ::add()
 	float d;
 	string n;
 	
-	cout<<"\n\n\t\t\t Add new product";
+	cout<<"\n\n\n\t\t\t|              Add new product                |\n\n";
 	cout<<"\n\t\t\t Enter Product ID: ";
 	cin>>pcode;
 	cout<<"\n\t\t\t Enter Product Name: ";
@@ -231,7 +232,7 @@ void shopping ::edit()
 	float d;
 	string n;
 	
-	cout<<"\n\t\t\t Edit the Product Details";
+	cout<<"\n\n\n\t\t\t|              Edit the Product Details              |\n\n";
 	cout<<"\n\t\t\t Product ID :\t";
 	cin>>pkey;
 	
@@ -249,16 +250,16 @@ void shopping ::edit()
 		{
 			if(pkey==pcode)
 			{
-				cout<<"\n\t\t Enter Product new ID :";
+				cout<<"\n\t\t\t Enter Product new ID :";
 				cin>>c;
-				cout<<"\n\t\t Enter Product Name :";
+				cout<<"\n\t\t\t Enter Product Name :";
 				cin>>n;
-				cout<<"\n\t\t Enter Product Price :";
+				cout<<"\n\t\t\t Enter Product Price :";
 				cin>>p;
-				cout<<"\n\t\t Enter Discount percentage on this product (Type only Numerical digit) :";
+				cout<<"\n\t\t\t Enter Discount percentage on this product (Type only Numerical digit) :";
 				cin>>d;
 				data1<<" "<<c<<" "<<n<<" "<<p<<" "<<d<<"\n";
-				cout<<"\n\n\t\t Product Details Updated Successfully ";
+				cout<<"\n\n\t\t\t Product Details Updated Successfully ";
 				token++;
 			}
 			else
@@ -289,8 +290,9 @@ void shopping::rem()
 	fstream data,data1;
 	int pkey;
 	int token=0;
-	cout<<"\n\n\t Delete product";
-	cout<<"\n\n\t Product Id :";
+
+	cout<<"\n\n\n\t\t\t|              Delete product            |\n\n";
+	cout<<"\n\n\t\t\t Product Id :";
 	cin>>pkey;
 	data.open("database.txt", ios::in);
 	if(!data)
@@ -306,7 +308,7 @@ void shopping::rem()
 		{
 			if(pcode==pkey)
 			{
-				cout<<"\n\n\t Product removed succesfully";
+				cout<<"\n\n\t\t\t Product removed succesfully";
 				token++;
 			}
 			else
@@ -323,7 +325,7 @@ void shopping::rem()
 		
 		if(token==0)
 		{
-			cout<<"\n\n Record not found";
+			cout<<"\n\n Product not found";
 		}
 	}
 }
@@ -332,13 +334,14 @@ void shopping:: list()
 {
 	fstream data;
 	data.open("database.txt",ios::in);
-	cout<<"\n\n|___________________________________________________________\n";
-	cout<<"Product ID\t\tProduct Name\t\tProduct Price\n";
-	cout<<"\n\n|___________________________________________________________\n";
+	cout<<"\n\n\t\t\t|                       Available Products                   |\n";
+	cout<<"\n\n\t\t\t--------------------------------------------------------------\n";
+	cout<<"\t\t\tProduct ID\tProduct Name\tProduct Price\n";
+	cout<<"\n\t\t\t----------------------------------------------------------------\n";
 	data>>pcode>>pname>>price>>discount;
 	while(!data.eof())
 	{
-		cout<<pcode<<"\t\t"<<pname<<"\t\t"<<price<<"\n";
+		cout<<"\t\t\t"<<pcode<<"\t\t"<<pname<<"\t\t\t"<<price<<"\n";
 		data>>pcode>>pname>>price>>discount;
 		
 	}
@@ -366,28 +369,28 @@ void shopping::receipt()
 		{
 			data.close();                                   
 			list();
-			cout<<"\n|##########################|\n";
-			cout<<"\n|                            |";
-			cout<<"\n|    Please place the order  |";
-			cout<<"\n|                            |";
-			cout<<"\n|##########################|\n";
+			cout<<"\n\t\t\t----------------------------\n";
+			cout<<"\t\t\t                                ";
+			cout<<"\n\t\t\t    Please place the order  ";
+			cout<<"\n\t\t\t                            ";
+			cout<<"\n\t\t\t----------------------------\n";
 			do
 			{
 				m:
-				cout<<"\n\n Product ID : ";
+				cout<<"\n\n\t\t\t Product ID : ";
 				cin>>arrc[c];
-				cout<<"\n Product Quantity : ";
+				cout<<"\n\t\t\t Product Quantity : ";
 				cin>>arrq[c];
 				for(int i=0;i<c;i++)
 				{
 					if(arrc[c] == arrc[i])
 					{
-						cout<<"\n\n Duplicate Product ID. Please try again!";
+						cout<<"\n\n\t\t\t Duplicate Product ID. Please try again!";
 						goto m;
 					}
 				}
 				c++;             
-				cout<<"\n\n Want to buy another product? Press y for yes and n for no : ";
+				cout<<"\n\n\t\t\t Want to buy another product? Press y for yes and n for no : ";
 				cin>>choice;	
 			}
 			
@@ -395,7 +398,7 @@ void shopping::receipt()
 			system("cls");
 			
 			cout<<"\n\n\t\t\t__________RECEIPT______________\n";
-			cout<<"\nProduct ID\tProduct Name\tQuantity \tPrice \tTotal Amount \tFinall Amount with Discount\n";
+			cout<<"\t\t\t"<<"\nProduct ID\tProduct Name\tQuantity \tPrice \tTotal Amount \tFinall Amount with Discount\n";
 			
 			
 			for(int i=0;i<c;i++) 
@@ -409,14 +412,14 @@ void shopping::receipt()
 						amount = price*arrq[i];
 						discount = amount - (amount*discount/100);
 						total =total+ discount;
-						cout<<"\n"<<pcode<<"\t\t"<<pname<<"\t\t"<<arrq[i]<<"\t\t"<<price<<"\t"<<amount<<"\t\t"<<discount;	
+						cout<<"\t\t\t"<<"\n"<<pcode<<"\t\t"<<pname<<"\t\t"<<arrq[i]<<"\t\t"<<price<<"\t"<<amount<<"\t\t"<<discount;	
 					}
 					   data>>pcode>>pname>>price>>discount;  
 				}
 				data.close();
 			}
-			cout<<"\n\n*****************************************";
-			cout<<"\n Total Amount : "<<total;
+			cout<<"\n\n\t\t\t*****************************************";
+			cout<<"\n\t\t\t Total Amount : "<<total;
 		}
 	}
 int main()

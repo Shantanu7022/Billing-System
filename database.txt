@@ -1,2 +1,12 @@
- 1 Rice 45 2
- 2 Egg 5 0
+ 1 Potato 20 1
+ 4 Chilie 10 0
+ 3 Tomato 10 1
+ 5 Carrot 15 1
+ 6 Egg 5 0
+ 7 Milk 30 2
+ 8 Butter 50 2
+ 9 Ghee 70 2
+ 10 Biscuit 40 1
+ 12 Salt 25 1
+ 13 Sugar 20 0
+ 20 Rice 50 2
