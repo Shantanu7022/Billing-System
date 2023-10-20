@@ -232,7 +232,7 @@ void shopping ::edit()
 	float d;
 	string n;
 	
-	cout<<"\n\n\n\t\t\t|              Edit the Product Details              |\n\n";
+	cout<<"\n\n\n\t\t\t|                Edit Product Details                 |\n\n";
 	cout<<"\n\t\t\t Product ID :\t";
 	cin>>pkey;
 	
