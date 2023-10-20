@@ -1,7 +1,7 @@
 # Billing System 
  I developed this billing system project in C++ 
 
- ### Home Page
+ ## Home Page
  ![image](https://github.com/Shantanu7022/Billing-System/assets/123929397/4fddde15-4989-43a2-b737-8e352d4e29d9)
 
 ## Admin Site
